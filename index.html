@@ -175,20 +175,17 @@ p {
   to { opacity: 1; transform: scale(1); }
 }
 
-.memory-btn {
+.memory-grid img {
   width: 100%;
-  margin-top: 22px;
-  border: none;
-  border-radius: 20px;
-  padding: 14px;
-  font-size: 18px;
-  font-weight: 700;
-  background: rgba(255,255,255,0.9);
-  color: #d63384;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
-  cursor: pointer;
+  height: 180px;          /* slightly bigger */
+  object-fit: contain;    /* fit full image */
+  object-position: center;
+  background: rgba(255,255,255,0.15);
+  border-radius: 16px;
+  border: 2px solid rgba(255,255,255,0.4);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  padding: 4px;
 }
-
 .memories {
   margin-top: 24px;
   text-align: left;
