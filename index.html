@@ -201,10 +201,20 @@ p {
   color: #fff;
 }
 
-.memory-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+.memory-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.memory-grid img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  object-position:center;
+  border-radius:20px;
+  border:2px solid rgba(255,255,255,0.5);
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
 }
 
 .memory-grid img {
