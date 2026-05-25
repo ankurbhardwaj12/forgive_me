@@ -281,7 +281,7 @@ p {
     <div class="heart">💗</div>
     <h1>I'm Sorry</h1>
     <p>I took for granted all your smiles,laughs, and memories. I promise I will never do it again. I am sorry for hurting you. Please accept my sincerest apologies</p><div class="message" id="msg">Tap the button for a sweet message.</div>
-<button class="btn" id="btn">Open My Heart</button>
+<button class="btn" onclick="openHeart()">Open Our Heart 💖</button>
 <div class="reveal" id="reveal">
   You matter to me more than my pride.
   I care, I miss you, and I want to make things right. 💞
@@ -308,6 +308,23 @@ p {
 </div>
 
   </div>
+  <div class="memory-page" id="heartPage">
+
+<button class="back-btn" onclick="closeHeart()">
+← Back
+</button>
+
+<h1>My Sweet Messages For You 💖</h1>
+
+<div class="message" style="margin-top:20px;" id="heartMsg">
+You are my favorite person 💕
+</div>
+
+<button class="btn" onclick="nextMessage()">
+Next Message 💌
+</button>
+
+</div>
     <!-- Music continues on all sections/pages -->
  <audio id="bgMusic" autoplay loop playsinline>
    <source src="music.mp3" type="audio/mpeg">
@@ -317,47 +334,46 @@ p {
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 
-const btn = document.getElementById("btn");
-const msg = document.getElementById("msg");
-const card = document.getElementById("card");
-const reveal = document.getElementById("reveal");
+const heartPage=document.getElementById("heartPage");
+const heartMsg=document.getElementById("heartMsg");
 
-const memoryPage = document.getElementById("memoryPage");
+const sweetMessages=[
 
-const messages = [
- "You are my favorite person 💖",
- "I miss your smile 🥺",
- "You mean everything to me 💞",
- "Please forgive me ❤️"
+"I miss your smile every day 🥺❤️",
+
+"You are the best thing in my life 💖",
+
+"Every moment with you feels magical ✨",
+
+"I never want to lose you 💞",
+
+"You are my happiness 🌸",
+
+"Please forgive me, my love ❤️"
+
 ];
 
-let i=-1;
-let opened=false;
+let current=0;
 
-btn.addEventListener("click",()=>{
+function openHeart(){
 
- if(!opened){
+heartPage.style.display="block";
 
-   i=(i+1)%messages.length;
-   msg.textContent=messages[i];
+}
 
-   reveal.style.display="block";
+function closeHeart(){
 
-   btn.textContent="Open My Heart 💖";
+heartPage.style.display="none";
 
-   opened=true;
+}
 
- }else{
+function nextMessage(){
 
-   msg.textContent="Tap the button for a sweet message.";
-   reveal.style.display="none";
+current=(current+1)%sweetMessages.length;
 
-   btn.textContent="Open My Heart";
+heartMsg.innerHTML=sweetMessages[current];
 
-   opened=false;
- }
-
-});
+}
 
 
 function openMemories(){
